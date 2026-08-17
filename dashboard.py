@@ -12,7 +12,7 @@ _MONITOR_URL = "http://127.0.0.1:18765"
 
 
 def register(app: FastAPI, plugin_dir: object, workspace: object) -> None:
-    """Expose the monitor's current snapshot through the Akashic Dashboard."""
+    """Expose the monitor's current snapshot through the Roxy Dashboard."""
 
     _ = plugin_dir, workspace
 

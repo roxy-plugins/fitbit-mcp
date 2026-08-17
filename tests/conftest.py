@@ -7,8 +7,9 @@ from pathlib import Path
 
 repo_root = Path(__file__).resolve().parents[1]
 agent_root = Path(
-    os.environ.get("AKASHIC_AGENT_ROOT", "").strip()
-    or repo_root.parents[1] / "akasic-agent"
+    os.environ.get("ROXY_AGENT_ROOT", "").strip()
+    or os.environ.get("AKASHIC_AGENT_ROOT", "").strip()
+    or repo_root.parents[1] / "roxy-agent"
 )
 for path in (repo_root, agent_root):
     if str(path) not in sys.path:

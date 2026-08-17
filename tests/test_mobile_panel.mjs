@@ -188,7 +188,7 @@ test("plugin owns a task-first panel without copying the desktop dashboard", () 
   assert.match(source, /fitbit\.current/);
   assert.match(source, /fitbit\.sleep_history/);
   assert.doesNotMatch(source, /fitbit\.overview/);
-  assert.doesNotMatch(source, /window\.AkashicDashboard/);
+  assert.doesNotMatch(source, /window\.(?:Roxy|Akashic)Dashboard/);
   assert.match(styles, /\.fitbit-mobile \[hidden\][\s\S]*display: none !important/);
   assert.doesNotMatch(styles, /linear-gradient|box-shadow|backdrop-filter/);
 });
