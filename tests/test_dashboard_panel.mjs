@@ -61,7 +61,7 @@ test("Dashboard panel renders the current monitor snapshot without a table", asy
   window.setInterval = setInterval;
   window.clearInterval = clearInterval;
   window.setTimeout = setTimeout;
-  window.AkashicDashboard = { registerPlugin: (plugin) => registered.push(plugin) };
+  window.RoxyDashboard = { registerPlugin: (plugin) => registered.push(plugin) };
   globalThis.window = window;
   globalThis.document = window.document;
 
@@ -110,7 +110,7 @@ test("Dashboard panel coalesces overlapping initial and focus loads", async () =
   window.setInterval = setInterval;
   window.clearInterval = clearInterval;
   window.setTimeout = setTimeout;
-  window.AkashicDashboard = { registerPlugin: (plugin) => registered.push(plugin) };
+  window.RoxyDashboard = { registerPlugin: (plugin) => registered.push(plugin) };
   globalThis.window = window;
   globalThis.document = window.document;
 

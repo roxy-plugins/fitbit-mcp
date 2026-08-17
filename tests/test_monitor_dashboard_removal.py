@@ -7,11 +7,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "monitor"))
 from monitor import server
 
 
-def test_monitor_root_points_to_akashic_dashboard() -> None:
+def test_monitor_root_points_to_roxy_dashboard() -> None:
     response = server.index()
 
     assert response.status_code == 410
-    assert b"Akashic Dashboard / Fitbit" in response.body
+    assert b"Roxy Dashboard / Fitbit" in response.body
 
 
 def test_monitor_keeps_auth_without_the_sleep_diff_interface(

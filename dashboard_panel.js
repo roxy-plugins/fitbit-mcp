@@ -367,7 +367,7 @@ function renderFitbitDashboard(container) {
   void load();
 }
 
-window.AkashicDashboard.registerPlugin({
+window.RoxyDashboard.registerPlugin({
   id: "fitbit_health",
   label: "Fitbit 健康",
   viewLabel: "Fitbit 健康",

@@ -2756,7 +2756,7 @@ def api_dashboard_snapshot():
 
 @app.get("/api/agent")
 def api_agent():
-    """供 Akashic agent 专用：睡眠状态 + 健康事件队列，不含原始数字。"""
+    """供 Roxy agent 专用：睡眠状态 + 健康事件队列，不含原始数字。"""
     with data_lock:
         sleep = latest_data.get("sleep", {}) or {}
         signals = latest_data.get("signals", {}) or {}
@@ -2888,7 +2888,7 @@ def index():
     return JSONResponse(
         {
             "service": "fitbit-monitor",
-            "dashboard": "Akashic Dashboard / Fitbit 健康",
+            "dashboard": "Roxy Dashboard / Fitbit 健康",
             "auth_start": "/auth/start",
         },
         status_code=410,

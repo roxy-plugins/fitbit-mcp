@@ -2,12 +2,12 @@
 
 ## 目标
 
-把当前健康上下文带到 Akashic Dashboard 和手机端，同时保持 Fitbit 数据、接口和界面归插件所有。宿主只注册入口、加载资源并转发请求，不新增 Fitbit 专用字段。
+把当前健康上下文带到 Roxy Dashboard 和手机端，同时保持 Fitbit 数据、接口和界面归插件所有。宿主只注册入口、加载资源并转发请求，不新增 Fitbit 专用字段。
 
 桌面 Dashboard 只展示 18765 的当前首屏数据：睡眠状态、心率、血氧、步数、实时心率趋势和最近 24 小时睡眠节律。旧的 `monitor/static/index.html` 与 sleep-report 对比页面不再提供；OAuth、monitor API、MCP、主动能力和移动端面板保持独立。
 
 ```text
-Akashic Dashboard
+Roxy Dashboard
 └── Fitbit 健康
     ├── 当前状态圆环 | 心率 / 血氧 / 步数
     ├── 最近 60 个心率采样点
@@ -63,7 +63,7 @@ PYTHONPATH=/mnt/data/coding/akasic-agent:$PWD:<fitbit-cache-site-packages> \
 PYTHONPATH=/mnt/data/coding/akasic-agent:$PWD \
   /mnt/data/coding/akasic-agent/.venv/bin/pyright plugin.py dashboard.py
 
-# 用临时 HOME/workspace 和真实 Akashic Dashboard 外壳预览
+# 用临时 HOME/workspace 和真实 Roxy Dashboard 外壳预览
 PYTHONPATH=/mnt/data/coding/akasic-agent:$PWD \
   /mnt/data/coding/akasic-agent/.venv/bin/python scripts/preview_dashboard.py
 ```

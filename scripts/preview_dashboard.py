@@ -27,20 +27,20 @@ def _manifest(agent_root: Path) -> str:
 
 
 def run_preview(agent_root: Path, plugin_root: Path, host: str, port: int) -> None:
-    """Run the real Akashic Dashboard shell with this plugin from a temporary install."""
+    """Run the real Roxy Dashboard shell with this plugin from a temporary install."""
 
     # 1. Validate both canonical sources before creating the isolated preview.
     agent_root = agent_root.resolve(strict=True)
     plugin_root = plugin_root.resolve(strict=True)
     if not (agent_root / "bootstrap" / "dashboard_api.py").is_file():
-        raise FileNotFoundError(f"Akashic Agent Dashboard 不存在: {agent_root}")
+        raise FileNotFoundError(f"Roxy Agent Dashboard 不存在: {agent_root}")
     if not (plugin_root / "dashboard_panel.js").is_file():
         raise FileNotFoundError(f"Fitbit Dashboard 面板不存在: {plugin_root}")
 
     # 2. Project the plugin into an isolated HOME and reuse the real Dashboard host.
     with tempfile.TemporaryDirectory(prefix="fitbit-dashboard-preview-") as temp:
         preview_root = Path(temp)
-        plugin_home = preview_root / "home" / ".akashic-plugin"
+        plugin_home = preview_root / "home" / ".roxy-plugin"
         cache_target = plugin_home / "cache" / "preview" / "fitbit" / "dev"
         shutil.copytree(
             plugin_root,
@@ -67,7 +67,7 @@ def run_preview(agent_root: Path, plugin_root: Path, host: str, port: int) -> No
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="在真实 Akashic Dashboard 外壳中预览 Fitbit 面板")
+    parser = argparse.ArgumentParser(description="在真实 Roxy Dashboard 外壳中预览 Fitbit 面板")
     parser.add_argument("--agent-root", type=Path, default=Path("/mnt/data/coding/akasic-agent"))
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=2237)
